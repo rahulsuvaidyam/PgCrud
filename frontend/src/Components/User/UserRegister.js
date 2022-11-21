@@ -11,7 +11,7 @@ const initialValues = {
     name: '',
     email: '',
     username: '',
-    user_type: '',
+    role_id: '',
     password: '',
 
 }
@@ -26,7 +26,7 @@ const UserRegister = () => {
     }
     const onSubmit = values => {
         axios.post(`http://localhost:3009/api/register`, {
-            name: values.name, email: values.email, username: values.username, user_type: values.user_type,
+            name: values.name, email: values.email, username: values.username, role_id: values.role_id,
             password: values.password
         }, { headers })
             .then((res) => {

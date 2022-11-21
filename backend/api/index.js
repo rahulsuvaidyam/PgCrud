@@ -12,6 +12,12 @@ router.post('/register', user.postUser)
 router.put('/user/:id', user.putUser)
 router.delete('/user/:id', user.deleteUser)
 
+const role = require('./CRUD/role')
+router.get('/role', role.getRole)
+router.post('/role', role.postRole)
+router.put('/role/:id', role.putRole)
+router.delete('/role/:id', role.deleteRole)
+
 const login = require('./Auth/login');
 router.post('/login', login.login);
 const verifyToken = require('./Auth/verifyToken');
@@ -47,10 +53,6 @@ router.post('/beneficiary', benif.postBeneficiary)
 router.put('/beneficiary/:id', benif.putBeneficiary)
 router.delete('/beneficiary/:id', benif.deleteBeneficiary)
 
-const role = require('./CRUD/role')
-router.get('/role', role.getRole)
-router.post('/role', role.postRole)
-router.put('/role/:id', role.putRole)
-router.delete('/role/:id', role.deleteRole)
+
 
 module.exports = router;

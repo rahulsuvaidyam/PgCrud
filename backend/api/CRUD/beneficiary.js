@@ -2,8 +2,9 @@ let benef = require('../../modals/Beneficiary')
 
 module.exports = {
     getBeneficiary: async (req, res) => {
+        let user_id = req.decoded.id
         try {
-            let Benef = await benef.findAll({})
+            let Benef = await benef.findAll({where:{user_id}})
             return res.json(Benef);
         } catch (error) {
             res.status(500).json({ message: error.message })

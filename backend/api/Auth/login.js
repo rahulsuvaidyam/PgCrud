@@ -14,7 +14,7 @@ module.exports = {
             if (User) {
                 let token = JWT.sign({
                     id: User.id, name: User.name, email: User.email,
-                    username: User.username, user_type: User.user_type
+                    username: User.username, role_id: User.role_id
                 }, JWT_SECRET);
                 return res.json({
                     message: 'Login Successful',

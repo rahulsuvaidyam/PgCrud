@@ -11,12 +11,12 @@ module.exports = {
     },
     postUser: async (req, res) => {
         try {
-            let { name, email, user_type, username, password } = req.body;
-            if (name && email && username && user_type && password) {
+            let { name, email, role_id, username, password } = req.body;
+            if (name && email && username && role_id && password) {
                 let User = await user.create(req.body)
                 return res.status(200).json({ message: `User successfull created`, users: User })
             } else {
-                return res.status(400).json({ message: `name ,email,username,user_type and password are require` })
+                return res.status(400).json({ message: `name ,email,username,role_id and password are require` })
 
             }
 

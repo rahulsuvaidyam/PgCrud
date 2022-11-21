@@ -30,7 +30,7 @@ const UserType = () => {
                     User Type
                 </label>
                 <Field className=" w-full border-2 py-1.5 px-2 outline-none font-medium
-                 text-gray-700" id="user_type" name="user_type" as="select" >
+                 text-gray-700" id="role_id" name="role_id" as="select" >
                     <option value="0">Select UserType</option>
 
                     {state.map((ab) => {

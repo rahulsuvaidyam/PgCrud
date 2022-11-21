@@ -36,12 +36,6 @@ module.exports = ((sequelize, type) => {
             type: type.STRING(250),
             require: true,
         },
-        user_type: {
-            type: type.ENUM,
-            defaultValue: '2',
-            values: ["0", "1", "2"],
-            comment: `0: Inactive  1:USER  2 : FIELD_OFFICER`,
-        },
         password: {
             type: type.STRING(25),
             require: true,

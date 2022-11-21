@@ -38,7 +38,7 @@ const UserTable = () => {
                         <div className="w-1/4 font-semibold">{e.name}</div>
                         <div className="w-1/4 font-semibold">{e.email}</div>
                         <div className="w-1/4 font-semibold">{e.username}</div>
-                        <div className="w-1/4 font-semibold">{e.user_type==='1'?<>ADMIN</>:<>USER</>}</div>
+                        <div className="w-1/4 font-semibold">{e.role_id===1?<>ADMIN</>:<>USER</>}</div>
                     </div>
                 ))}
             </div>

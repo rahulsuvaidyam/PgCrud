@@ -88,7 +88,11 @@ module.exports = ((sequelize, type) => {
             type: type.DATE,
         },
         created_by: {
-            type: type.INTEGER(11)
+            type: type.INTEGER(11),
+            reference: {
+                modal: 'User',
+                key: 'id'
+            },
         },
         updated_by: {
             type: type.INTEGER(11)

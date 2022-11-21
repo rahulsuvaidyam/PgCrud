@@ -3,7 +3,8 @@ import { Field, ErrorMessage, Formik, Form } from "formik";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import {motion} from 'framer-motion'
-import {IoIosClose} from 'react-icons/io'
+import {AiOutlineCloseCircle} from 'react-icons/ai'
+import {IoCheckmarkDoneCircleOutline} from 'react-icons/io5'
 
 
 const initialValues = {
@@ -60,7 +61,7 @@ const User = () => {
         <>
             <div className="w-full h-screen flex justify-center items-center">
                 <div className="w-full sm:w-[540px] h-full  flex justify-center items-center">
-                    <div className="w-full h-[500px] border-2 rounded-3xl ">
+                    <div className="w-full h-[500px] border-2 rounded-3xl relative">
                     <Formik
                             initialValues={initialValues}
                             // validationSchema={validationSchema}
@@ -70,14 +71,14 @@ const User = () => {
                                     <h1 className='text-3xl font-semibold'>Sign up for an Account</h1>
                                     <p className='font-medium text-sm'>Please provide following details to continue</p>
                                 </div>
-                                <div className="fixed bottom-5 left-5">
+                                <div className="absolute top-0 left-0 w-full">
                                     {isLoding === true ? <motion.p
-                                    initial={{opacity:0, x:200}}
-                                    animate={{opacity:1,x:0}}
-                                    exit={{opacity:0,x:200}}
-                                    className={`text-sm font-medium relative bg-gray-200 py-2 pl-2 pr-5 
+                                    initial={{opacity:0,}}
+                                    animate={{opacity:1}}
+                                    exit={{opacity:0}}
+                                    className={`text-md w-full flex justify-center items-center gap-2 rounded-t-3xl font-semibold relative bg-gray-200 py-2 
                                     ${msgErr === 200 ? 'text-green-600 border-b-2 border-emerald-400' : 'text-red-500 border-b-2 border-red-400'}`}>
-                                        {msg} <IoIosClose className='absolute right-0 top-0 text-xl cursor-pointer' onClick={()=>setisLoding(false)}/></motion.p> : null}
+                                       {msgErr === 200 ?<IoCheckmarkDoneCircleOutline className='text-2xl pt-1'/>:<AiOutlineCloseCircle className='text-2xl pt-1'/>} {msg} </motion.p> : null}
                                  </div>
                                 <div className="w-full h-full flex flex-col gap-8">
                                     {/* Username */}

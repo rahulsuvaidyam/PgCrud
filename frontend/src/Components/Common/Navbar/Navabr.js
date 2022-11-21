@@ -25,10 +25,10 @@ const navigationAD =[
 ]
 
     let paylode = JSON.parse(sessionStorage.getItem('paylode'))
-    let { user_type } = paylode
+    let { role_id } = paylode
     let admin = false;
 
-    user_type === "1" ? admin = true : admin = false;
+    role_id === 1 ? admin = true : admin = false;
     return (
         <>
             <motion.div
